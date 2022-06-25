@@ -17,38 +17,3 @@ gradlePlugin {
         }
     }
 }
-//jar {
-//    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-//
-//    manifest {
-//        attributes(
-//                'id': 'com.assurant.dls.GreetingPlugin',
-//                'implementationClass': 'com.assurant.dls.GreetingPlugin',
-//                'Main-Class': 'com.assurant.dls.GreetingPlugin'
-//        )
-//    }
-//    from {
-//        configurations.runtimeClasspath
-//
-//                .collect { it.isDirectory() ? it : zipTree(it) }
-//    }
-//}
-
-dependencies {
-//    compile gradleApi()
-    runtimeClasspath 'com.puppycrawl.tools:checkstyle:10.3'
-}
-
-//configurations {
-//    implementation.setCanBeResolved(true)
-//}
-//configurations {
-//    check {
-//        extendsFrom implementation
-//    }
-//}
-//task copyLibs(type: Copy) {
-//    from configurations.runtimeClasspath
-//    into "$project.rootDir/build/libs/"
-//}
-//build.dependsOn copyLibs

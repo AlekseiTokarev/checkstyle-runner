@@ -10,7 +10,8 @@ greeting {
 
 checkstyle {
     file = 'src/main/java/com/github/alekseitokarev/App.java'
-    config = 'https://github.com/AlekseiTokarev/as2-protocol-server-poc/blob/action/.github/checkstyle/checkstyle.xml'
+    config = 'https://raw.githubusercontent.com/AlekseiTokarev/checkstyle-runner/bc945feb7ea9d2107b96a58dc352489e44107fd6/checkstyle-config.xml'
+    suppressionFile = 'https://raw.githubusercontent.com/AlekseiTokarev/checkstyle-runner/master/suppressions.xml'
 }
 
 repositories {

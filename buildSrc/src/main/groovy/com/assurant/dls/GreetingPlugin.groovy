@@ -16,6 +16,7 @@ class GreetingPlugin implements Plugin<Project> {
                 })
 
         project.task('checkstyle')
+                .doFirst({ project.file('build/reports').mkdirs() })
                 .doLast({
                     project.javaexec {
                         mainClass.set("com.puppycrawl.tools.checkstyle.Main")
@@ -23,11 +24,13 @@ class GreetingPlugin implements Plugin<Project> {
                         args(checkstyleExtension.config.get())
                         args("-f")
                         args("sarif")
+                        args("-o")
+                        args("build/reports/checkstyle-analysis.sarif")
                         args(checkstyleExtension.file.get())
-                        jvmArgs("-Dconfig_loc=config/checkstyle")
+                        jvmArgs("-DsuppressionFile=${checkstyleExtension.suppressionFile.get()}")
                         jvmArgs("-Dbasedir=${project.projectDir}")
                         classpath = project.configurations.runtimeClasspath
-                        systemProperty("config_location", "config/checkstyle")
+                        systemProperty("config_location", "config")
                     }
                 })
     }
@@ -41,5 +44,8 @@ interface GreetingPluginExtension {
 
 interface CheckstylePluginExtension {
     Property<String> getFile()
+
     Property<String> getConfig()
+
+    Property<String> getSuppressionFile()
 }
