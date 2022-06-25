@@ -4,7 +4,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.provider.Property
 
-class GreetingPlugin implements Plugin<Project> {
+class CheckstylePlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
         def greetingExtension = project.extensions.create("greeting", GreetingPluginExtension)
@@ -17,7 +17,7 @@ class GreetingPlugin implements Plugin<Project> {
 
         project.task('checkstyle')
                 .doFirst({ project.file('build/reports').mkdirs() })
-                .doLast({
+                .doLast("trigger linter", {
                     project.javaexec {
                         mainClass.set("com.puppycrawl.tools.checkstyle.Main")
                         args("-c")

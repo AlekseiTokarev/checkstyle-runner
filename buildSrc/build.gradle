@@ -12,8 +12,8 @@ repositories {
 gradlePlugin {
     plugins {
         simplePlugin {
-            id = 'com.assurant.dls.GreetingPlugin'
-            implementationClass = 'com.assurant.dls.GreetingPlugin'
+            id = 'com.assurant.dls.CheckstylePlugin'
+            implementationClass = 'com.assurant.dls.CheckstylePlugin'
         }
     }
 }
