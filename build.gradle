@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+    id 'com.assurant.dls.GreetingPlugin'
+}
+
+greeting {
+    message = 'Hi'
+    greeter = 'Alexei'
+}
+
+checkstyle {
+    file = 'src/main/java/com/github/alekseitokarev/App.java'
+    config = 'https://github.com/AlekseiTokarev/as2-protocol-server-poc/blob/action/.github/checkstyle/checkstyle.xml'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.google.guava:guava:28.2-jre'
+    implementation 'com.puppycrawl.tools:checkstyle:10.3'
+}
+
