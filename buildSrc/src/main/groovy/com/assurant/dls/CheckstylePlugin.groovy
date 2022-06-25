@@ -30,7 +30,6 @@ class CheckstylePlugin implements Plugin<Project> {
                         jvmArgs("-DsuppressionFile=${checkstyleExtension.suppressionFile.get()}")
                         jvmArgs("-Dbasedir=${project.projectDir}")
                         classpath = project.configurations.runtimeClasspath
-                        systemProperty("config_location", "config")
                     }
                 })
     }
