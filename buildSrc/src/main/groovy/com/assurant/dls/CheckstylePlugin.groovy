@@ -29,12 +29,6 @@ class CheckstylePlugin implements Plugin<Project> {
     }
 }
 
-interface GreetingPluginExtension {
-    Property<String> getMessage()
-
-    Property<String> getGreeter()
-}
-
 interface CheckstylePluginExtension {
     Property<String> getFile()
 
