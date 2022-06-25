@@ -7,13 +7,7 @@ import org.gradle.api.provider.Property
 class CheckstylePlugin implements Plugin<Project> {
     @Override
     void apply(Project project) {
-        def greetingExtension = project.extensions.create("greeting", GreetingPluginExtension)
         def checkstyleExtension = project.extensions.create("checkstyle", CheckstylePluginExtension)
-
-        project.task('hello')
-                .doLast({
-                    println "${greetingExtension.message.get()} from ${greetingExtension.greeter.get()}"
-                })
 
         project.task('checkstyle')
                 .doFirst({ project.file('build/reports').mkdirs() })

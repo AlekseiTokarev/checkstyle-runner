@@ -3,11 +3,6 @@ plugins {
     id 'com.assurant.dls.CheckstylePlugin'
 }
 
-greeting {
-    message = 'Hi'
-    greeter = 'Alexei'
-}
-
 checkstyle {
     file = 'src/main/java/com/github/alekseitokarev/App.java'
     config = 'https://raw.githubusercontent.com/AlekseiTokarev/checkstyle-runner/bc945feb7ea9d2107b96a58dc352489e44107fd6/checkstyle-config.xml'
