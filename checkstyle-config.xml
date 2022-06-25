@@ -30,7 +30,7 @@
   </module>
   <!-- https://checkstyle.org/config_filters.html#SuppressionFilter -->
   <module name="SuppressionFilter">
-    <property name="file" value="${config_loc}/suppressions.xml"/>
+    <property name="file" value="${suppressionFile}"/>
     <property name="optional" value="false"/>
   </module>
   <module name="SuppressWarningsFilter"/>
